@@ -57,8 +57,8 @@ test("settings bundle saves, queries, and clears Shadowrocket storage", async ()
 test("module uses repository-owned scripts and matches observed Apple hosts", async () => {
   const module = await readFile(new URL("../modules/wloc.module", import.meta.url), "utf8");
 
-  assert.match(module, /raw\.githubusercontent\.com\/donney521qq\/wloc-location-spoofer\/main\/scripts\/wloc\.js\?v=1\.0\.0/);
-  assert.match(module, /raw\.githubusercontent\.com\/donney521qq\/wloc-location-spoofer\/main\/scripts\/wloc-settings\.js\?v=1\.0\.0/);
+  assert.match(module, /raw\.githubusercontent\.com\/donney521qq\/wloc-location-spoofer\/v1\.0\.0\/scripts\/wloc\.js/);
+  assert.match(module, /raw\.githubusercontent\.com\/donney521qq\/wloc-location-spoofer\/v1\.0\.0\/scripts\/wloc-settings\.js/);
 
   const responsePattern = /^https?:\/\/(?:gs-loc(?:-cn)?\.apple\.com|gsp(?:e)?(?:\d+(?:-\d+)*)?(?:-cn)?-ssl\.ls\.apple\.com|bluedot\.is\.autonavi\.com(?:\.gds\.alibabadns\.com)?)\/clls\/wloc/;
   const observedHosts = [
